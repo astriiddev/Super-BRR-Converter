@@ -40,7 +40,7 @@ ifeq ($(ENV), llvm)
 	LDFLAGS += -luser32 -lshell32
 endif
 
-OBJS := $(CSOURCE:$(SRCDIR)/%.c=$(OBJDIR)/%.o) $(CXXSOURCE:$(WXDIR)/%.cpp=$(OBJDIR)/%.o) $(MK_PARENT)/res/sbc.o
+OBJS := $(CSOURCE:$(SRCDIR)/%.c=$(OBJDIR)/%.o) $(MK_PARENT)/res/sbc.o
 
 .PHONY: build compile clean make_bin
 build: make_bin compile
