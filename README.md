@@ -18,6 +18,7 @@ BRR audio samples are a bit of a weird thing and therefore any audio being conve
 SBC will automatically add the block of 0 amplitude samples if not already present. Having a sample length and loop length divisible by 16 requires a bit more work....
 
 Frankly, I find it easiest to find length of samples or loop points that are divisible by 16 if the values of the lengths are in hexadecimal. Why? Because if the smallest value place is 0 in hexadecimal, that length will always be divisible by 16. Therefore the sample length and loop slider values are all set to hex values. </br>
+
 To make it even easier, there's a "BRR SAMPLE SELECT" button in the Options menu which will force the mouse clicks/drags in the waveform area to _always_ land on the start of a 16 sample block. This will also affect the sample start slider and the loop start and end sliders, dragging the sliders while BRR SAMPLE SELECT is engaged will always have them land on the start of a 16 block sample (sample start will be with respect to loop start, loop start with respect to sample start, and loop end with respect to loop start). </br>
 
 And while it's not exactly a _requirement_ of BRR samples, BRR samples are used in SPC song files, which themselves have a 64kb limit. All sample data, song data, and delay buffer RAM must fit into this 64kb space. So it's recommended to keep your BRR samples as short as possible. Resampling the audio data down to a lower sample rate will also decrease file size, while sacrificing sound quality. But hey, lofi is also a vibe.
@@ -74,7 +75,10 @@ make CONFIG=Release
 ```
 # The future of this project
 Honestly, the main goal of this project, other than to make an easy to use GUI editor for BRR samples, was for me to teach myself how to make a GUI app completely from scratch and learn low-level audio programming without help from a higher level API. A lot of the code I developed for this project made its way into other projects that I've already released (the waveform drawing in this was used in the already released Ami Sampler VST). </br>
+
 I learned a lot about creating widgets from scratch and how to do pseudo-OOP in the C programming language and working on this project really forced me to push my programming abilities. </br>
+
 That being said, I doubt I'll develop this particular project further. I'll do patches and bug fixes when they come up, but I'm not sure I'll add many more features to this project and I'll probably keep it as a lightweight audio editor. </br>
+
 A goal of mine, since before I even started this project, has been to create a module tracker for the SNES so that people can easily create their own SPC songs on the SNES, so I'll take everything I learned from this project and apply it to that one when the time comes. </br>
 Until then, thanks for enjoying the Super BRR Converter :)
